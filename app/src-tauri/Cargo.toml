@@ -1,0 +1,22 @@
+[package]
+name = "astrometry-desktop"
+version = "1.0.0"
+description = "Desktop client for Astrometry.net"
+authors = ["Astrometry.net"]
+edition = "2021"
+
+[lib]
+name = "astrometry_desktop_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.4.1", features = [] }
+
+[dependencies]
+tauri = { version = "2.9.1", features = [] }
+tauri-plugin-opener = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[features]
+custom-protocol = ["tauri/custom-protocol"]
