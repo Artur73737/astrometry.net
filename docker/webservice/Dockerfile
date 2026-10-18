@@ -30,7 +30,7 @@ RUN mkdir appsecrets && \
     cp appsecrets-example/django.py appsecrets
 
 #COPY docker/webservice/django_db.py appsecrets/
-COPY django_db.py appsecrets/
+COPY docker/webservice/django_db.py appsecrets/
 #RUN (echo -n "DJANGO_SECRET_KEY = '"; tr -dc A-Za-z0-9 </dev/urandom | head -c 52; echo "'") > /src/astrometry/net/appsecrets/django.py
 
 RUN mv migrations/* /tmp && \
